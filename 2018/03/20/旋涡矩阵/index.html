@@ -5,14 +5,18 @@
   
 
   
-  <title>Hexo</title>
+  <title>漩涡矩阵 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="填充漩涡矩阵输入一个非零正整数，得到一个旋涡矩阵如下所示为漩涡矩阵12345678910 1    2    3    4   12   13   14    5   11   16   15    6   10    9    8    7 1    2    3    4    5   16   17   18   19    6   15   24   25   20    7   14">
+<meta property="og:type" content="article">
+<meta property="og:title" content="漩涡矩阵">
+<meta property="og:url" content="http://yoursite.com/2018/03/20/旋涡矩阵/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="填充漩涡矩阵输入一个非零正整数，得到一个旋涡矩阵如下所示为漩涡矩阵12345678910 1    2    3    4   12   13   14    5   11   16   15    6   10    9    8    7 1    2    3    4    5   16   17   18   19    6   15   24   25   20    7   14">
+<meta property="og:updated_time" content="2018-03-20T15:00:20.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="漩涡矩阵">
+<meta name="twitter:description" content="填充漩涡矩阵输入一个非零正整数，得到一个旋涡矩阵如下所示为漩涡矩阵12345678910 1    2    3    4   12   13   14    5   11   16   15    6   10    9    8    7 1    2    3    4    5   16   17   18   19    6   15   24   25   20    7   14">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-旋涡矩阵" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-旋涡矩阵" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/20/旋涡矩阵/" class="article-date">
   <time datetime="2018-03-20T14:22:21.000Z" itemprop="datePublished">2018-03-20</time>
@@ -74,8 +76,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/20/旋涡矩阵/">漩涡矩阵</a>
+    <h1 class="article-title" itemprop="name">
+      漩涡矩阵
     </h1>
   
 
@@ -121,150 +123,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-AnimationNumView" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/04/AnimationNumView/" class="article-date">
-  <time datetime="2018-03-04T14:22:21.000Z" itemprop="datePublished">2018-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/04/AnimationNumView/">AnimationNumView</a>
-    </h1>
+    <a href="/2018/03/04/AnimationNumView/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">AnimationNumView</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="自定义view"><a href="#自定义view" class="headerlink" title="自定义view"></a>自定义view</h2><p><img src="/2018/03/04/AnimationNumView/GIF.gif" alt="gif"></p>
-<h3 id="功能需求："><a href="#功能需求：" class="headerlink" title="功能需求："></a>功能需求：</h3><ul>
-<li>动态数字</li>
-<li>带千分位逗号</li>
-<li>支持动态保留小数位数</li>
-<li>支持double类型数据（扩展）</li>
-</ul>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><ul>
-<li>数字显示可继承TextView</li>
-<li>属性动画，数字动态的增加显示</li>
-<li>千分位分割，使用DecimalFormat</li>
-<li>自定义DoubleEValuetor继承自TypeEvaluator<valuetor></valuetor></li>
-</ul>
-<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>当时拿到需求简单分析了一下，用安卓自带的属性动画，把要显示的数字先做从0到真实数字的属性动画，在每次变化后再给数字添加‘，’处理完了显示出来，可是当数字过大后发现自带的属性动画只支持了float类型还没有支持double类型，于是想到了自定义一个double的Evaluator直接上DoubleEvaluator类代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleEValuetor</span> <span class="keyword">implements</span> <span class="title">TypeEvaluator</span>&lt;<span class="title">Double</span>&gt; </span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Double <span class="title">evaluate</span><span class="params">(<span class="keyword">float</span> v, Double aDouble, Double t1)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">double</span> x = v * t1;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>动画的使用方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> res;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAnimationText</span><span class="params">(String text)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!isNum(text)) &#123;</span><br><span class="line">            <span class="keyword">this</span>.setText(<span class="string">"请设置纯数字文本"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        res = Double.parseDouble(text);</span><br><span class="line">        openAnimation = <span class="keyword">true</span>;</span><br><span class="line">        ValueAnimator animator = ValueAnimator</span><br><span class="line">                .ofObject(<span class="keyword">new</span> DoubleEValuetor(), <span class="number">0.1</span>, res); </span><br><span class="line">        animator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator animation)</span> </span>&#123;</span><br><span class="line">                res = ((Double) animation.getAnimatedValue());</span><br><span class="line">                setText(formatTosepara(res));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">        animator.setDuration(<span class="number">3000</span>);</span><br><span class="line">        animator.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAnimationText</span><span class="params">(String text, <span class="keyword">int</span> keepFigures)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.setKeepFigures(keepFigures);</span><br><span class="line">        setAnimationText(text);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>formatTosepara方法用来给显示前的数字每个千分位添加逗号<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认保留整数位</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> keepFigures = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String KEEP_INTEGER = <span class="string">"#,###"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String KEEP_ONE_FIGURE = <span class="string">"#,###.0"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String KEEP_TWO_FIGURE = <span class="string">"#,###.00"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String KEEP_THREE_FIGURE = <span class="string">"#,###.000"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String KEEP_FOUR_FIGURE = <span class="string">"#,###.0000"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String KEEPFIGURE = KEEP_INTEGER;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">formatTosepara</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">        DecimalFormat df;</span><br><span class="line">        <span class="keyword">switch</span> (getKeepFigures()) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                KEEPFIGURE = KEEP_INTEGER;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                KEEPFIGURE = KEEP_ONE_FIGURE;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                KEEPFIGURE = KEEP_TWO_FIGURE;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                KEEPFIGURE = KEEP_THREE_FIGURE;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                KEEPFIGURE = KEEP_FOUR_FIGURE;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        df = <span class="keyword">new</span> DecimalFormat(KEEPFIGURE);</span><br><span class="line">        <span class="keyword">return</span> df.format(data);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/04/AnimationNumView/" data-id="cjezuakpa00006su1i8mo51id" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-my-new-post" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/29/my-new-post/" class="article-date">
-  <time datetime="2018-01-29T14:53:59.000Z" itemprop="datePublished">2018-01-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/29/my-new-post/">my new post</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>测试博客</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void print(String mes)&#123;</span><br><span class="line">	System.out.println(mes);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="这是一个小标题"><a href="#这是一个小标题" class="headerlink" title="这是一个小标题"></a>这是一个小标题</h5><ul>
-<li>首先，balabala。。。   </li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/29/my-new-post/" data-id="cjezuakpn00026su1ws1fknpv" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/29/hello-world/" class="article-date">
-  <time datetime="2018-01-29T14:30:30.767Z" itemprop="datePublished">2018-01-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/29/hello-world/" data-id="cjezuakph00016su151md0iq2" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
